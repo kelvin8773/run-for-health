@@ -6,24 +6,34 @@ import Icon from "react-native-vector-icons/Ionicons";
 const slides = [
   {
     key: "one",
-    title: "Run For Health",
+    title: "Run for health",
     text:
-      "Lorem ipsum dolor sit amet consecte tuer adipsing elit sed diam monum my nibh eusimod eltor",
+      "Running is the most easy adapt sports, and the more you run the healthy you are!",
     image: require("../images/Jogging-rafiki.png"),
   },
   {
     key: "two",
     title: "Run with Friends",
-    text:
-      "Lorem ipsum dolor sit amet consecte tuer adipsing elit sed diam monum my nibh eusimod eltor",
+    text: "With pair of running shoe, you can getting start.",
     image: require("../images/Jogging-amico.png"),
   },
   {
     key: "three",
-    title: "Run for relax",
-    text:
-      "Lorem ipsum dolor sit amet consecte tuer adipsing elit sed diam monum my nibh eusimod eltor",
+    title: "Run alone with your pet",
+    text: "Running alone is the best time for relaxing and thinking.",
     image: require("../images/Jogging-pana.png"),
+  },
+  {
+    key: "four",
+    title: "Run indoor",
+    text: "Running on treadmill when raining outside.",
+    image: require("../images/Workout-pana.png"),
+  },
+  {
+    key: "five",
+    title: "Training at home",
+    text: "Or just exercising at home & Office.",
+    image: require("../images/Training-at-home.png"),
   },
 ];
 
