@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const slides = [
   {
@@ -26,19 +27,23 @@ const slides = [
   },
 ];
 
-type Item = {
-  key: string;
-  title: string;
-  text: string;
-  image: string;
-};
+interface Props {
+  handleDone: () => void;
+}
 
-type Props = {
-  item: Item;
-};
+const Welcome: React.FC<Props> = ({ handleDone }): JSX.Element => {
+  type Item = {
+    key: string;
+    title: string;
+    text: string;
+    image: string;
+  };
 
-const Welcome: React.FC = (): JSX.Element => {
-  const renderItem: React.FC<Props> = (props: Props): JSX.Element => {
+  type Props = {
+    item: Item;
+  };
+
+  const renderItem: React.FC<Props> = (props): JSX.Element => {
     const { item }: Props = props;
 
     return (
@@ -50,11 +55,30 @@ const Welcome: React.FC = (): JSX.Element => {
     );
   };
 
+  const nextButton = (): JSX.Element => (
+    <View style={styles.buttonCircle}>
+      <Icon
+        name="md-arrow-round-forward"
+        color="rgba(255, 255, 255, .9)"
+        size={24}
+      />
+    </View>
+  );
+
+  const doneButton = (): JSX.Element => (
+    <View style={styles.buttonCircle}>
+      <Icon name="md-checkmark" color="rgba(255, 255, 255, .9)" size={24} />
+    </View>
+  );
+
   return (
     <AppIntroSlider
       renderItem={renderItem}
       data={slides}
       activeDotStyle={styles.dot}
+      renderDoneButton={doneButton}
+      renderNextButton={nextButton}
+      onDone={handleDone}
     />
   );
 };
@@ -85,6 +109,14 @@ const styles = StyleSheet.create({
   dot: {
     backgroundColor: "#21465b",
     width: 30,
+  },
+  buttonCircle: {
+    width: 40,
+    height: 40,
+    backgroundColor: "rgba(0, 0, 0, .2)",
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
