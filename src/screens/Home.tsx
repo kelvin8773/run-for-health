@@ -6,6 +6,7 @@ import {
   Button,
   ScrollView,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 
 type Props = {
@@ -25,17 +26,29 @@ const Home: React.FC<Props> = (props): JSX.Element => {
         }}
       >
         <Text style={{}}>Home</Text>
-        <Text style={{}}>Back</Text>
+        <TouchableOpacity
+          style={{
+            height: 40,
+            width: 50,
+            alignItems: "flex-end",
+            justifyContent: "center",
+          }}
+          onPress={() => navigation.navigate("Detail")}
+        >
+          <Text style={{}}>More</Text>
+        </TouchableOpacity>
       </View>
 
       <View>
         <TextInput
           style={{
-            height: 40,
+            height: 50,
             borderColor: "gray",
-            borderWidth: 1,
+            borderWidth: 0.5,
             marginBottom: 20,
             borderRadius: 5,
+            paddingHorizontal: 15,
+            fontSize: 24,
           }}
         />
         <Button

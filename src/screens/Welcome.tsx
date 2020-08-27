@@ -29,12 +29,6 @@ const slides = [
     text: "Running on treadmill when raining outside.",
     image: require("../images/Workout-pana.png"),
   },
-  {
-    key: "five",
-    title: "Training at home",
-    text: "Or just exercising at home & Office.",
-    image: require("../images/Training-at-home.png"),
-  },
 ];
 
 interface Props {
