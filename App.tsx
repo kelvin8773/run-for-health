@@ -11,6 +11,7 @@ import {
 } from "@expo-google-fonts/roboto-slab";
 
 import Welcome from "./src/screens/Welcome";
+import AppNavigator from "./src/navigation/Navigator";
 
 const App: React.FC = (): JSX.Element => {
   const [showHomeScreen, setShowHomeScreen] = useState(false);
@@ -31,7 +32,7 @@ const App: React.FC = (): JSX.Element => {
     return (
       <View style={styles.container}>
         {showHomeScreen ? (
-          <Text style={styles.text}>Run For Health</Text>
+          <AppNavigator />
         ) : (
           <Welcome handleDone={handleDone} />
         )}
